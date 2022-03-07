@@ -9,3 +9,4 @@ api_platform:
         pagination:
             enabled: false
             items_per_page: 5
+    

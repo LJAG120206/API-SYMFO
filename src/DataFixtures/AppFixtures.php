@@ -2,10 +2,12 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\Customer;
-use App\Entity\Invoice;
-use App\Entity\User;
+//use Guzzle\Http\Client;
+
 use Faker\Factory;
+use App\Entity\User;
+use App\Entity\Invoice;
+use App\Entity\Customer;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
@@ -30,6 +32,7 @@ class AppFixtures extends Fixture
         
 
         for ($u=0; $u < 10; $u++) { 
+
             $user = new User();
 
             $chrono = 1;
@@ -67,9 +70,7 @@ class AppFixtures extends Fixture
                     $manager->persist($invoice);
                 }
 
-        }
-
-        
+            }
         }
         $manager->flush();
     }
